@@ -1,0 +1,84 @@
+[
+    {
+        "collection": "Interiors",
+        "path": "interiors",
+        "images": [
+            {
+                "title": "Almond St.",
+                "path": "almond-st"
+            },
+            {
+                "title": "DD 779",
+                "path": "dd-779"
+
+            },
+            {
+                "title": "Dirty Frank's",
+                "path": "dirty-franks"
+            },
+            {
+                "title": "Gale",
+                "path": "gale"
+            },
+            {
+                "title": "Lucy Jane",
+                "path": "lucy-jane"
+            },
+            {
+                "title": "Marie",
+                "path": "marie"
+
+            },
+            {
+                "title": "Pop Pop Mac",
+                "path": "pop-pop-mac"
+            },
+            {
+                "title": "San Francisco Dolphins",
+                "path": "san-francisco-dolphins"
+            }
+        ]
+    },
+    {
+        "collection": "Landscapes",
+        "path": "landscapes",
+        "images": [
+            {
+                "title": "Bringing Back Brother",
+                "path": "bringing-back-brother"
+            },
+            {
+                "title": "Land & Space",
+                "path": "land-and-space"
+            },
+            {
+                "title": "Untitled",
+                "path": "untitled"
+            },
+            {
+                "title": "Los Angeles",
+                "path": "los-angeles"
+            },
+            {
+                "title": "Nearly 18 Feet",
+                "path": "nearly-18-feet"
+            },
+            {
+                "title": "Positively Nowhere",
+                "path": "positively-nowhere"
+            },
+            {
+                "title": "River",
+                "path": "river"
+            },
+            {
+                "title": "Safe House",
+                "path": "safe-house"
+            },
+            {
+                "title": "Willows",
+                "path": "willows"
+            }
+        ]
+    }
+]

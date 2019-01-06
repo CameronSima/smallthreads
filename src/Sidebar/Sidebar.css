@@ -1,0 +1,17 @@
+.sidebar {
+    height: 850px;
+
+    display: inline-block;
+    overflow-y: auto;
+    padding-right: 21px;
+}
+
+.sidebar-mobile {
+    display: inherit;
+    width: 1000px;
+}
+
+.sidebar-image {
+    margin: 0px 0px 20px 0px;
+    width: 100%
+}
