@@ -10,18 +10,14 @@ const ImageConfig = buildImageConfig(imageConfig);
 
 const CenterImage = ({ image }) => (
   <div style={{ display: "inline-block" }}>
-    <Link to={`/${image.title}/detail`}>
-      <img className="img-fluid" src={image.large_path}
-      />
-    </Link>
-    <h3 style={{
+    <img className="img-fluid" src={image.large_path} />
+    <h4 style={{
       textAlign: "center", padding: "15px"
-    }}>{image.title}</h3>
+    }}>{image.title}</h4>
   </div>
 )
 
 const Contact = () => (
-
   <a href="mailto:dmmcelroy@gmail.com">
     <h1 className="email">dmmcelroy@gmail.com</h1>
   </a>
@@ -29,7 +25,6 @@ const Contact = () => (
 )
 
 const Page = ({ collection, image }) => (
-
   <Fragment>
     <div className="row text-center d-md-none"
       style={{ overflowX: "auto", marginTop: "20px" }}>
@@ -43,7 +38,6 @@ const Page = ({ collection, image }) => (
       <div className="col-12 col-md-10">
         <CenterImage image={image} />
       </div>
-
     </div>
   </Fragment>
 )
@@ -59,7 +53,7 @@ const HomePage = () => {
     />)
 }
 
-const Collection = ({ match }) => {
+const Collection = ({ match, page }) => {
   let collection = ImageConfig.find(collection =>
     collection.path === match.params.collection_path
   );
@@ -99,35 +93,54 @@ const Collection = ({ match }) => {
 
 }
 
-const App = () => (
+class App extends React.PureComponent {
 
-  <Router>
-    <div className="App">
-      <div className="container">
+  state = {
+    page: 'Home'
+  }
 
-        <header className="App-header">
-          <NavBar />
-        </header>
+  navigate = (page) => {
+    this.setState({
+      page: page
+    });
+  }
 
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <div className="container">
 
-        <Route
-          path='/' exact
-          component={HomePage}
-        />
+            <header className="App-header">
+              <NavBar
+                navigate={this.navigate}
+                page={this.state.page}
+              />
+            </header>
 
-        <Route
+            <Route
+              path='/' exact
+              component={HomePage}
+            />
 
-          path='/contact/'
-          component={Contact} />
+            <Route
+              path='/contact/'
+              component={Contact}
+            />
 
-        <Route
-          path='/images/:collection_path'
-          component={Collection} />
+            <Route
+              path='/images/:collection_path'
+              render={({ match }) =>
+                <Collection match={match} page={this.state.page} />
+              }
+            />
 
-      </div>
-    </div>
-  </Router>
-);
+          </div>
+        </div>
+      </Router>
+    )
+  }
+}
 
 const Footer = () => (
   <footer className="navbar fixed-bottom">

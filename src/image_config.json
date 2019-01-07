@@ -80,5 +80,114 @@
                 "path": "willows"
             }
         ]
+    },
+    {
+        "collection": "Oldies",
+        "path": "oldies",
+        "images": [
+            {
+                "title": "Bird",
+                "path": "bird"
+            },
+            {
+                "title": "Black Creature",
+                "path": "black-creature"
+
+            },
+            {
+                "title": "Man on the Steps",
+                "path": "man-on-the-steps"
+            },
+            {
+                "title": "Piano Lesson",
+                "path": "piano-lesson"
+            },
+            {
+                "title": "White Creature",
+                "path": "white-creature"
+            }
+        ]
+    },
+    {
+        "collection": "People",
+        "path": "people",
+        "images": [
+            {
+                "title": "Andrea",
+                "path": "andrea"
+            },
+            {
+                "title": "Backstage",
+                "path": "backstage"
+
+            },
+            {
+                "title": "Big Brass Bed",
+                "path": "big-brass-bed"
+            },
+            {
+                "title": "Date",
+                "path": "date"
+            },
+            {
+                "title": "Miss",
+                "path": "miss"
+            },
+            {
+                "title": "Routine",
+                "path": "routine"
+            },
+            {
+                "title": "Shimmer",
+                "path": "shimmer"
+            },
+            {
+                "title": "The Husband, the Deceased, the Divorcee, and the Young",
+                "path": "the-husband-the-deceased-the-divorcee-and-the-young"
+            },
+            {
+                "title": "Third Face",
+                "path": "third-face"
+            },
+            {
+                "title": "Yesterday",
+                "path": "yesterday"
+            }
+        ]
+    },
+    {
+        "collection": "Stateless",
+        "path": "stateless",
+        "images": [
+            {
+                "title": "Bird Too",
+                "path": "bird-too"
+            },
+            {
+                "title": "Vegetation",
+                "path": "vegetation"
+            },
+            {
+                "title": "Clothesline",
+                "path": "clothesline"
+
+            },
+            {
+                "title": "Lightbulbs",
+                "path": "lightbulbs"
+            },
+            {
+                "title": "Mini Light 1",
+                "path": "mini-light-1"
+            },
+            {
+                "title": "Mini Light 4",
+                "path": "mini-light-4"
+            },
+            {
+                "title": "The Greenhouse",
+                "path": "the-greenhouse"
+            }
+        ]
     }
 ]

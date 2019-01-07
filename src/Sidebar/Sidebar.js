@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
 
-const Thumbnail = ({ image, mobile }) => (
+const Thumbnail = ({ image, mobile = false }) => (
     <Fragment key={image.path + mobile ? "_mobile" : ""}>
         <Link to={image.url}>
             <img className="sidebar-image" src={image.thumbnail_path} />

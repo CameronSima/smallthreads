@@ -11,20 +11,35 @@ import {
 
 import { Link } from "react-router-dom";
 
-export default class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
+const MyNavLink = ({ clickHandler, url, title }) => (
+  <div onClick={clickHandler}>
+    <NavItem>
+      <Link to={url}>
+        <NavLink>{title}</NavLink>
+      </Link>
+    </NavItem>
+  </div>
+)
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
+export default class NavBar extends React.Component {
+
+  state = {
+    isOpen: false
+  };
+
+  toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
+  close = () => {
+    this.setState({
+      isOpen: false
+    });
+  }
+
+
   render() {
     return (
       <div>
@@ -35,36 +50,36 @@ export default class NavBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link to='/images/oldies/'>
-                  <NavLink>Oldies</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to='/images/people/'>
-                  <NavLink>People</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to='/images/interiors/'>
-                  <NavLink>Interiors</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to='/images/landscapes'>
-                  <NavLink>Landscapes</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to='/images/stateless/'>
-                  <NavLink>Stateless</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to='/contact/'>
-                  <NavLink>Contact</NavLink>
-                </Link>
-              </NavItem>
+            <MyNavLink
+                url='/images/oldies/'
+                title='Oldies'
+                clickHandler={this.close}
+              />
+              <MyNavLink
+                url='/images/people/'
+                title='People'
+                clickHandler={this.close}
+              />
+              <MyNavLink
+                url='/images/interiors/'
+                title='Interiors'
+                clickHandler={this.close}
+              />
+              <MyNavLink
+                url='/images/landscapes/'
+                title='Landscapes'
+                clickHandler={this.close}
+              />
+              <MyNavLink
+                url='/images/stateless/'
+                title='Stateless'
+                clickHandler={this.close}
+              />
+              <MyNavLink
+                url='/contact/'
+                title='Contact'
+                clickHandler={this.close}
+              />
             </Nav>
           </Collapse>
         </Navbar>
