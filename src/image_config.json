@@ -159,6 +159,11 @@
         "collection": "Stateless",
         "path": "stateless",
         "images": [
+
+            {
+                "title": "The Greenhouse",
+                "path": "the-greenhouse"
+            },
             {
                 "title": "Bird Too",
                 "path": "bird-too"
@@ -183,10 +188,6 @@
             {
                 "title": "Mini Light 4",
                 "path": "mini-light-4"
-            },
-            {
-                "title": "The Greenhouse",
-                "path": "the-greenhouse"
             }
         ]
     }
