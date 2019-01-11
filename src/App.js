@@ -26,8 +26,6 @@ const Contact = () => (
 
 const Page = ({ collection, image }) => {
 
-  console.log("COLLECTION", collection)
-
   // prefetch collection images
   collection.images.forEach(image => {
     const i = new Image();
