@@ -1,21 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import NavBar from './Nav/Navbar';
-import { Sidebar, MobileSidebar } from './Sidebar/Sidebar';
+import Page from './Page/Page';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import imageConfig from './image_config';
-import { buildImageConfig, getRandomImage, getRandomCollection } from './helpers';
+import { buildImageConfig, getRandomImage, getRandomCollection, prefetchCollection } from './helpers';
 import './App.css';
 
 const ImageConfig = buildImageConfig(imageConfig);
-
-const CenterImage = ({ image }) => (
-  <div style={{ display: "inline-block" }}>
-    <img className="img-fluid" src={image.large_path} />
-    <h4 style={{
-      textAlign: "center", padding: "15px"
-    }}>{image.title}</h4>
-  </div>
-)
 
 const Contact = () => (
   <a href="mailto:dmmcelroy@gmail.com">
@@ -23,33 +14,6 @@ const Contact = () => (
   </a>
 
 )
-
-const Page = ({ collection, image }) => {
-
-  // prefetch collection images
-  collection.images.forEach(image => {
-    const i = new Image();
-    i.src = image.large_path;
-  });
-
-  return (
-    <Fragment>
-      <div className="row text-center d-md-none"
-        style={{ overflowX: "auto", marginTop: "20px" }}>
-        <MobileSidebar images={collection.images} />
-      </div>
-
-      <div className="row text-center" style={{ marginTop: "16px" }}>
-        <div className="col-2 d-none d-md-block col-fluid">
-          <Sidebar images={collection.images} />
-        </div>
-        <div className="col-12 col-md-10">
-          <CenterImage image={image} />
-        </div>
-      </div>
-    </Fragment>
-  )
-}
 
 const HomePage = () => {
   const defaultCollection = ImageConfig.find(config => config.collection === "Landscapes");

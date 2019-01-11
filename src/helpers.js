@@ -1,13 +1,13 @@
 
-export const getRandomImage = (collection) => {
+export const getRandomImage = collection => {
     return collection.images[Math.floor(Math.random() * collection.images.length)];
 };
 
-export const getRandomCollection = (imageConfig) => {
+export const getRandomCollection = imageConfig => {
     return imageConfig[Math.floor(Math.random() * imageConfig.length)];
 }
 
-export const buildImageConfig = (imageConfig) => {
+export const buildImageConfig = imageConfig => {
     return imageConfig.map(config => {
         config.url = `/images/${config.path}/`;
         config.images = config.images.map(image => {
@@ -19,3 +19,11 @@ export const buildImageConfig = (imageConfig) => {
         return config;
     });
 };
+
+// prefetch collection images
+export const prefetchCollection = collection => {
+  collection.images.forEach(image => {
+    const i = new Image();
+    i.src = image.large_path;
+  });
+}
