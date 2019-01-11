@@ -24,26 +24,37 @@ const Contact = () => (
 
 )
 
-const Page = ({ collection, image }) => (
-  <Fragment>
-    <div className="row text-center d-md-none"
-      style={{ overflowX: "auto", marginTop: "20px" }}>
-      <MobileSidebar images={collection.images} />
-    </div>
+const Page = ({ collection, image }) => {
 
-    <div className="row text-center" style={{ marginTop: "16px" }}>
-      <div className="col-2 d-none d-md-block col-fluid">
-        <Sidebar images={collection.images} />
+  console.log("COLLECTION", collection)
+
+  // prefetch collection images
+  collection.images.forEach(image => {
+    const i = new Image();
+    i.src = image.large_path;
+  });
+
+  return (
+    <Fragment>
+      <div className="row text-center d-md-none"
+        style={{ overflowX: "auto", marginTop: "20px" }}>
+        <MobileSidebar images={collection.images} />
       </div>
-      <div className="col-12 col-md-10">
-        <CenterImage image={image} />
+
+      <div className="row text-center" style={{ marginTop: "16px" }}>
+        <div className="col-2 d-none d-md-block col-fluid">
+          <Sidebar images={collection.images} />
+        </div>
+        <div className="col-12 col-md-10">
+          <CenterImage image={image} />
+        </div>
       </div>
-    </div>
-  </Fragment>
-)
+    </Fragment>
+  )
+}
 
 const HomePage = () => {
-  const defaultCollection = ImageConfig.find(config => config.collection === "Interiors");
+  const defaultCollection = ImageConfig.find(config => config.collection === "Landscapes");
   const defaultImage = getRandomImage(defaultCollection);
 
   return (
