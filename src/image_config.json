@@ -44,6 +44,10 @@
         "path": "landscapes",
         "images": [
             {
+                "title": "Boardwalk",
+                "path": "boardwalk"
+            },
+            {
                 "title": "Bringing Back Brother",
                 "path": "bringing-back-brother"
             },
