@@ -1,10 +1,14 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Sidebar, MobileSidebar } from '../Sidebar/Sidebar';
 import { prefetchCollection } from '../helpers';
+import './Page.css';
 
 const CenterImage = ({ image }) => (
     <div style={{ display: "inline-block" }}>
-      <img className="img-fluid" src={image.large_path} />
+      <img className="img-fluid large-center-image"
+           alt={image.alteText ? image.alteText : ''}
+           src={image.large_path} 
+      />
       <h4 style={{
         textAlign: "center", padding: "15px"
       }}>{image.title}</h4>

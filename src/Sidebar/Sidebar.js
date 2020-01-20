@@ -30,7 +30,7 @@ export const Sidebar = ({ images }) => (
 
     <div className="sidebar">
         <div>
-            {images.map(image => <Thumbnail image={image} />)}
+            {images.map(image => <Thumbnail key={`image_thumb_${image.path}`} image={image} />)}
         </div>
     </div>
 )

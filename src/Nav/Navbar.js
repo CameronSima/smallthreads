@@ -8,18 +8,22 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import './Navbar.css'
 
 import { Link } from "react-router-dom";
 
-const MyNavLink = ({ clickHandler, url, title }) => (
-  <div onClick={clickHandler}>
-    <NavItem>
-      <Link to={url}>
-        <NavLink>{title}</NavLink>
-      </Link>
-    </NavItem>
-  </div>
-)
+const MyNavLink = ({ clickHandler, url, title }) => {
+  const isActive = window.location.href.includes(url)
+  return (
+    <div className={isActive ? 'active-link' : ''} onClick={clickHandler}>
+      <NavItem>
+        <Link to={url}>
+          <NavLink>{title}</NavLink>
+        </Link>
+      </NavItem>
+    </div>
+  )
+}
 
 export default class NavBar extends React.Component {
 
@@ -39,13 +43,12 @@ export default class NavBar extends React.Component {
     });
   }
 
-
   render() {
     return (
       <div>
         <Navbar color="white" light expand="md">
           <Link to='/'>
-            <NavbarBrand href="/">Small Threads</NavbarBrand>
+            <NavbarBrand>Small Threads</NavbarBrand>
           </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

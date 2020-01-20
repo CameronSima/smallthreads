@@ -44,6 +44,10 @@
         "path": "landscapes",
         "images": [
             {
+                "title": "The Greenhouse",
+                "path": "the-greenhouse"
+            },
+            {
                 "title": "Boardwalk",
                 "path": "boardwalk"
             },
@@ -163,11 +167,6 @@
         "collection": "Stateless",
         "path": "stateless",
         "images": [
-
-            {
-                "title": "The Greenhouse",
-                "path": "the-greenhouse"
-            },
             {
                 "title": "Bird Too",
                 "path": "bird-too"
